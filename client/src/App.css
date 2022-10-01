@@ -1,0 +1,57 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Benne&family=Libre+Baskerville:ital@1&display=swap');
+
+.brand-logo ,h3{
+
+    font-family: 'Benne', serif;
+    font-family: 'Libre Baskerville', serif;
+    margin-left:8px;
+}
+
+.my-card{
+    margin-top:30px;
+}
+
+.auth-card{
+padding: 31px;
+max-width: 370px;
+margin: 40px auto;
+text-align: center;
+}
+
+.indigo.darken-4 {
+    background-color: #1a237e !important;
+    margin-bottom: 11px;
+    width:100%;
+}
+
+
+ .input-field input[type=text]:focus {
+     margin-top:5px;
+    border-bottom: 1px solid rgb(31, 18, 150) !important;
+    box-shadow: 0 1px 0 0 rgb(31, 18, 150) !important;
+  
+}
+
+.gallery{
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.home-card{
+    max-width: 500px;
+    height: max-content;
+    margin: 26px auto;
+    padding: 08px;
+    border-radius: 21px;
+}
+
+
+.item{
+
+    width:30%;
+    margin-top:10px;
+}
+
