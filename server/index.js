@@ -13,39 +13,41 @@ mongodb+srv://socialnetwork:<password>@cluster0.vnsbf.mongodb.net/myFirstDatabas
 const app=express();
 const PORT=5000;
 
-app.use(express.json());
-app.use(routerAuth);
-app.use(routerPost);
 
-const coustumMiddleWare=()=>{
-console.log("Middleware Executed !!");
+// const coustumMiddleWare=()=>{
+// console.log("Middleware Executed !!");
 
-} 
+// } 
 
 
-app.use(coustumMiddleWare);
+// app.use(coustumMiddleWare);
 
 
-app.get('/',(req,res)=>{
-        console.log("From Home Page")
-        res.send("Response From Server -> Hello world "); //visible on browser
-})
+// app.get('/',(req,res)=>{
+//         console.log("From Home Page")
+//         res.send("Response From Server -> Hello world "); //visible on browser
+// })
 
-app.get('/Login',coustumMiddleWare,(req,res)=>{
-        console.log("Hello From Login page");        
-        res.send("Response From About-> Hello world "); //visible on browser
-})
+// app.get('/Login',coustumMiddleWare,(req,res)=>{
+//         console.log("Hello From Login page");        
+//         res.send("Response From About-> Hello world "); //visible on browser
+// })
 
 
-app.use(bodyParser.json({limit:"30mb" , extended:true}));
-app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
-app.use(cors());
+// app.use(bodyParser.json({limit:"30mb" , extended:true}));
+// app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
+// app.use(cors());
 
 const CONNECTION_URL='mongodb+srv://socialnetwork:socialnetwork@cluster0.vnsbf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(CONNECTION_URL).then(()=>{
         console.log(`server is Connected TO Database Through Port  : ${PORT}`);
 })
+
+app.use(express.json());
+app.use(routerAuth);
+app.use(routerPost);
+
 
 app.listen(PORT,()=>{
         console.log("Server is Running On : ",PORT)    //visibles in Terminal 
