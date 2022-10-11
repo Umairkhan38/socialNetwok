@@ -44,18 +44,46 @@ routerPost.get("/allpost",requireLogin,(req,res)=>{
 })
  
 
-
 routerPost.get('/mypost',requireLogin,(req,res)=>{
    Post.find({postedBy:req.user._id})
-   .populate("PostedBy","_id name")
+   .populate([{ path: "postedBy", strictPopulate: false }])
+   .populate("postedBy","_id name")
    .then(mypost=>{
-      res.json({mypost}) 
+      res.json({mypost})
    })
    .catch(err=>{
       console.log(err)
      })
 })
  
+
+routerPost.put('/like',requireLogin,(req,res)=>{
+   Post.findByIdAndUpdate(req.body.postId,{
+      $push:{likes:req.user._id}
+   },{
+      new:true
+   }).exec((err,result)=>{
+         if(err)
+            return res.status(422).json({error:err})
+         else
+            res.json(result)
+   })
+})
+
+
+routerPost.put('/unlike',requireLogin,(req,res)=>{
+   Post.findByIdAndUpdate(req.body.postId,{
+      $pull:{likes:req.user._id}
+   },{
+      new:true
+   }).exec((err,result)=>{
+         if(err)
+            return res.status(422).json({error:err})
+         else
+            res.json(result)
+   })
+})
+
 
 export default routerPost;
 

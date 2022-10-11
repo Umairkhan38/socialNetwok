@@ -79,8 +79,9 @@ function CreatePost() {
         onChange={(e)=>setBody(e.target.value)}
         />
         <div className="file-field input-field">
-            <div className="btn">
-                <span>Upload Image</span>
+            <div className="btn #1a237e indigo darken-4">
+            <i style={{fontSize:"1.1rem"}} className="material-icons">add_to_photos</i> <span style={{fontSize:"1.3rem"}}> Select Image</span>
+            
                 <input 
                 type="file" 
                 onChange={(e)=>setImage(e.target.files[0])}
@@ -91,8 +92,8 @@ function CreatePost() {
             </div>
         </div>
         
-        <button className="btn waves-effect waves-light #2196f3 blue darken-1"
-         onClick={()=>postDetails()}>Submit Post</button>
+        <button  style={{width:"100%",fontSize:"1.3rem"}} className="btn #2e7d32 green darken-3" onClick={()=>postDetails()}>     <i style={{fontSize:"1.2rem"}} className="material-icons">assignment</i> Upload Post</button>
+    
     </div>
   )
 }
