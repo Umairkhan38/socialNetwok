@@ -45,7 +45,7 @@ function SignUp() {
     <div>
       <div className="my-card">
         <div className="card auth-card input-field  z-depth-4">
-          <Link to="/"> <h3 className="center indigo-text text-darken-4 ">QuickChat</h3> </Link>
+          <h3 className="center indigo-text text-darken-4 ">QuickChat</h3>
           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
           <input type="text" placeholder="Email" value={email}
             onChange={(e) => setEmail(e.target.value)} />

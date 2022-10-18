@@ -50,7 +50,7 @@ function SignIn() {
     <div>
       <div className="my-card">
       <div className="card auth-card input-field z-depth-4">
-     < Link to="/"> <h3  className="center indigo-text text-darken-4">QuickChat</h3></Link >
+      <h3  className="center indigo-text text-darken-4">QuickChat</h3>
       <input type="text" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
       <input type="password" placeholder="password"  value={password} onChange={(e)=>setPassword(e.target.value)} />
       <button className="btn waves-effect  indigo darken-4 z-depth-3" onClick={()=>postData()} name="action" >Sign In</button>
